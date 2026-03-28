@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clase 4: Métodos Numéricos - Bisección</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="miestilo.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <h1>Método de la Bisección</h1>
+
+    <p>
+        El método de la bisección es un algoritmo de búsqueda de raíces que divide repetidamente un intervalo a la mitad 
+        y selecciona el subintervalo donde existe un cambio de signo de la función.
+    </p>
+
+    <h2>1. Fundamento Matemático</h2>
+
+    <div class="caja">
+        Para una función continua \(f(x)\), si en un intervalo \([a, b]\) se cumple que:
+    </div>
+
+    <div class="formula">
+        \( f(a) \cdot f(b) < 0 \)
+    </div>
+
+    <p>
+        Entonces, por el Teorema de Bolzano, existe al menos un punto \(c \in (a, b)\) tal que \(f(c) = 0\).
+    </p>
+
+    <h2>2. Representación Visual del Proceso</h2>
+    
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Bisection_method.svg/400px-Bisection_method.svg.png" 
+         alt="Esquema del método de bisección" class="imagen">
+
+    <p style="text-align: center; font-size: 0.9rem; color: #7f8c8d;">
+        Figura 1: Reducción sucesiva del intervalo buscando la raíz.
+    </p>
+
+    <h2>3. Actividad Interactiva</h2>
+
+    <div class="ejercicio">
+        <p><strong>Desafío:</strong> Dada la siguiente ecuación no lineal:</p>
+
+        <div class="formula">
+            \( f(x) = x^3 - x - 2 = 0 \)
+        </div>
+
+        <p>Utilizando el método de bisección en el intervalo <strong>[1, 2]</strong> con <strong>15 iteraciones</strong>, 
+        ¿cuál es la raíz aproximada?</p>
+
+        <div style="margin-top: 15px;">
+            <label>Tu solución:</label><br>
+            <input type="number" id="inputBiseccion" step="0.0001" style="padding: 8px; border-radius: 5px; border: 1px solid #ccc; width: 200px;">
+            <button onclick="corregirBiseccion()" style="padding: 8px 15px; background: #1a5276; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                Verificar Solución
+            </button>
+        </div>
+
+        <div id="feedbackBiseccion" style="margin-top: 15px; font-weight: bold;"></div>
+    </div>
+
+    <div class="caja">
+        <strong>Nota técnica:</strong> Al hacer clic en "Verificar", el sistema ejecuta un script en segundo plano 
+        que calcula el valor exacto mediante el objeto <code>Biseccion(f, a, b, n)</code>. 
+        Abre la <strong>consola del navegador (F12)</strong> para ver el desglose paso a paso.
+    </div>
+
+    <h2>4. Navegación</h2>
+    <a href="index.html">← Volver al inicio</a>
+
+    <script src="biseccion.js"></script>
+</body>
+</html>

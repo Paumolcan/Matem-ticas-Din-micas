@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Laboratorio de Arquitectura: El Parque Geométrico</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="miestilo.css">
+</head>
+<body>
+
+    <h1>Laboratorio de Arquitectura: Diseño de Parcelas</h1>
+
+    <p>
+        ¡Bienvenido, joven arquitecto! El ayuntamiento nos ha pedido diseñar las nuevas zonas verdes del parque. 
+        Tu misión es dibujar la forma de la parcela en el plano y calcular cuánta hierba necesitaremos para cubrirla (el área).
+    </p>
+
+    <h2>1. Instrucciones del Proyecto</h2>
+    <div class="caja">
+        Haz <strong>clic en dos puntos</strong> del plano para definir el primer lado de tu parcela cuadrada. 
+        El sistema te dirá cuánto mide ese lado en metros.
+    </div>
+
+    <div style="text-align: center;">
+        <canvas id="lienzoParque" width="500" height="300" style="background: #fff; border: 3px double #1a5276; cursor: crosshair;"></canvas>
+        <p>Medida del Lado: <strong id="medidaLado">0 m</strong></p>
+    </div>
+
+    <h2>2. Cálculo de Superficie</h2>
+    <div class="ejercicio">
+        <p>Sabiendo que el área de un cuadrado se calcula multiplicando <strong>Lado × Lado</strong>, ¿cuántos metros cuadrados (m²) mide tu parcela?</p>
+        
+        <div class="formula">
+            \( A = L \cdot L \)
+        </div>
+
+        <input type="number" id="respuestaArea" placeholder="Introduce el área..." style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+        <button onclick="comprobarArea()" style="padding: 10px 20px; background: #1abc9c; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+            Comprobar Proyecto
+        </button>
+        <button onclick="reiniciarPlano()" style="padding: 10px; background: #95a5a6; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Borrar y Repetir
+        </button>
+
+        <p id="resultadoFeedback" style="margin-top: 15px; font-weight: bold;"></p>
+    </div>
+
+    <div class="caja">
+        <strong>Consejo didáctico:</strong> Fíjate bien en la medida del lado que aparece bajo el dibujo. Si el lado mide 5 metros, el área será 25 m². ¡Usa la consola (F12) para ver los datos secretos del sistema!
+    </div>
+
+    <a href="index.html">← Volver al menú de clase</a>
+
+    <script src="arquitecto.js"></script>
+</body>
+</html>

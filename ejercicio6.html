@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafío Geométrico Final</title>
+    <link rel="stylesheet" href="miestilo.css">
+    <style>
+        .mensaje-exito { background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; border: 1px solid #c3e6cb; margin-top:10px; }
+        .mensaje-error { background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; border: 1px solid #f5c6cb; margin-top:10px; }
+        .formula-grande { font-size: 1.2rem; background: #f9f9f9; padding: 10px; border-left: 5px solid #1a5276; }
+    </style>
+    <script src="https://algebra.js.org/javascripts/algebra-0.2.6.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <h1>Matemáticas Aplicadas: Intersección de Rectas</h1>
+
+    <div class="caja">
+        <strong>Teorema fundamental:</strong> El punto donde dos rectas se cortan es la solución única de un sistema de ecuaciones lineales. En este punto, ambas rectas comparten el mismo valor de <em>x</em> y de <em>y</em>.
+    </div>
+
+    <div style="text-align: center; margin: 20px;">
+        <canvas id="canvasInterseccion" width="600" height="400" style="background:#fff; border:3px solid #1a5276; cursor:crosshair; border-radius:15px;"></canvas>
+        <div id="display1" class="formula"></div>
+        <div id="display2" class="formula"></div>
+        <br>
+        <button onclick="reiniciarTodo()" style="padding:10px 20px; background:#e74c3c; color:white; border:none; border-radius:5px; cursor:pointer; font-weight:bold;">🔄 REINICIAR RADAR</button>
+    </div>
+
+    <div class="ejercicio">
+        <h3>1. Demostración Matemática</h3>
+        <div id="teorema-demo" class="formula-grande">Dibuja las dos rectas para ver el proceso de igualación...</div>
+    </div>
+
+    <div id="zona-ejercicio" class="ejercicio" style="display:none;">
+        <h3>2. ¡Tu Turno! Pon a prueba tu ingenio</h3>
+        <p>Observa la ecuación de igualación arriba. Despeja la variable <strong>X</strong> e introduce el valor aquí:</p>
+        <input type="number" id="inputAlumno" step="0.01" style="padding:10px; width:150px; border: 2px solid #1a5276; border-radius:5px;">
+        <button onclick="comprobarEjercicio()" style="padding:10px 20px; background:#1a5276; color:white; border:none; border-radius:5px; cursor:pointer;">VERIFICAR</button>
+        <div id="feedback"></div>
+    </div>
+
+    <h2>3. Vídeo Tutorial de Apoyo</h2>
+    <div style="text-align:center;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JYGVruMn508?si=MN_QwHXUc_J8f57Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </div>
+
+    <div class="caja" style="margin-top:40px; border-left: 10px solid #8e44ad;">
+        <strong>Conclusión del Bloque:</strong> Con este último ejercico damos por culminada la unidad de HTML junto con las funciones de JavaScript, el resultado final es una herramienta que puede interactuar con el usuario web proponiéndole ejercicios visuales, incorporando zonas interactivas de cáculo y zonas con material de apoyo visual, como el enlace a Youtube.
+    </div>
+
+    <div style="text-align:center; margin-bottom: 50px;">
+        <a href="index.html" style="font-weight:bold; color:#1a5276; text-decoration:none; font-size: 1.2rem;">← VOLVER AL INICIO</a>
+    </div>
+
+    <script src="geometria.js"></script>
+</body>
+</html>
